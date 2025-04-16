@@ -1,0 +1,286 @@
+@media (max-width: 768px) {
+  .danh-sach-sp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item-sp {
+    width: 45%;
+    margin: 10px;
+  }
+
+  .item-sp img {
+    width: 100%;
+    height: auto;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #6B4F3B;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 6px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background: white;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .navbar nav {
+    display: none;
+    /* Ẩn nav mặc định ở mobile */
+  }
+
+  .door-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .door-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .san-pham {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .anh-san-pham {
+    width: 90%;
+  }
+
+  .thong-tin-san-pham h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+
+
+  .menu-responsive {
+    display: block;
+    cursor: pointer;
+  }
+
+  .description h1 {
+    font-size: 1.8rem;
+  }
+
+  .product-img {
+    height: 180px;
+  }
+
+  .gallery .photo {
+    width: 100%;
+    height: auto;
+  }
+
+  #gall-text {
+    flex-direction: column;
+  }
+
+  .slider-container {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .footer-top,
+  .footer-middle {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center {
+    width: 100%;
+  }
+
+  #gall {
+    padding: 20px 15px;
+  }
+
+  /* 1. GALLERY ảnh */
+  .photo {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .photo img {
+    height: auto;
+  }
+
+  .gallery {
+    gap: 10px;
+  }
+
+  /* 2. Chữ giới thiệu ngắn gọn hơn (thu nhỏ font) */
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  /* 3. Chia lại phần text & slider theo cột dọc */
+  #gall-text {
+    flex-direction: column;
+  }
+
+  .slider-container {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .slide {
+    height: auto;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* 4. Rút gọn phần video TikTok */
+  blockquote.tiktok-embed {
+    max-width: 100% !important;
+    min-width: auto !important;
+    margin: 20px auto !important;
+    transform: scale(0.9);
+  }
+
+  /* 5. Rút gọn footer */
+  .footer {
+    padding: 20px 15px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footer-top,
+  .footer-middle,
+  .footer-commit {
+    display: none;
+  }
+
+  .footer-bottom {
+    font-size: 13px;
+  }
+
+  .footer-bottom img {
+    height: 20px;
+  }
+
+  .social {
+    margin: 10px 0;
+  }
+
+  .social-icon {
+    font-size: 16px;
+    margin: 0 6px;
+  }
+
+  .map-box iframe {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .logo-link img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .custom-slideshow {
+    height: auto;
+  }
+
+  .product-img {
+    height: auto;
+    max-height: 180px;
+  }
+
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .description {
+    padding: 15px;
+  }
+
+  .description h1 {
+    font-size: 1.5rem;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-name {
+    font-size: 14px;
+  }
+
+  .view-all-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+
+
+/* Ẩn mobile menu mặc định */
+.mobile-menu-toggle,
+.mobile-menu {
+  display: none;
+}

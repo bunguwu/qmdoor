@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .carousel-wrapper {
+    position: relative;
+    padding: 30px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    flex: 0 0 auto;
+    width: 200px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .product-name {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .product-price {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 24px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  .carousel-btn.left {
+    left: 10px;
+  }
+
+  .carousel-btn.right {
+    right: 10px;
+  }
+</style>
+
+body {
+
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #b4511e;
+  margin-bottom: 20px;
+}
+
+.cta-box {
+  background: #d35400;
+  padding: 30px;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: white;
+  color: #d35400;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #f5efe6;
+}
+
+.contact-item {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #007bff;
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  color: #b4511e;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+@media (max-width: 500px) {
+  .container {
+      margin: 20px;
+      padding: 20px;
+  }
+}
+</style>
+
+<body>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn left" onclick="scrollCarousel(-1)">❮</button>
+
+    <div class="carousel-track" id="product-carousel">
+      <!-- Sản phẩm sẽ được thêm bằng JS -->
+    </div>
+
+    <button class="carousel-btn right" onclick="scrollCarousel(1)">❯</button>
+  </div>
+
+
+
+</body>
+<script>
+  const products = [
+    { name: "Cửa gỗ mẫu 1", price: "3.000.000đ", image: "door1.jpg" },
+    { name: "Cửa gỗ mẫu 2", price: "3.500.000đ", image: "door2.jpg" },
+    { name: "Cửa gỗ mẫu 3", price: "4.000.000đ", image: "door3.jpg" },
+    { name: "Cửa gỗ mẫu 4", price: "4.500.000đ", image: "door4.jpg" },
+    { name: "Cửa gỗ mẫu 5", price: "4.800.000đ", image: "door5.jpg" }
+  ];
+
+  const carousel = document.getElementById("product-carousel");
+
+  products.forEach(product => {
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <div class="product-name">${product.name}</div>
+      <div class="product-price">${product.price}</div>
+    `;
+    carousel.appendChild(card);
+  });
+
+  function scrollCarousel(direction) {
+    const scrollAmount = 220; // pixels
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+</script>
+
+</html>
